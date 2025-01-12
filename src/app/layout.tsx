@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/lib/ThemeProvider";
 import "./globals.css";
+import Header from "@/components/myComponents/Header";
 
 
 export default function RootLayout({
@@ -9,12 +10,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="transition-colors duration-200">
+      <body className="transition-colors duration-500">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem={false}
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>

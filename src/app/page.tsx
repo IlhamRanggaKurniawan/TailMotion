@@ -1,10 +1,12 @@
-import { ModeToggle } from '@/components/myComponents/ModeToggle'
+import Footer from '@/components/myComponents/Footer'
+import TransformControl from '@/components/myComponents/TransformControl'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <ModeToggle />
+      <TransformControl />
+      <Footer />
     </div>
   )
 }
