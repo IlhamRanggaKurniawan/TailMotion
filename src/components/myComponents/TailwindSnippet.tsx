@@ -18,7 +18,7 @@ const TailwindSnippet = ({ code }: { code: string }) => {
     };
 
     return (
-        <div className="bg-secondary py-4 px-2 rounded-md relative space-y-2 md:px-4">
+        <div className="bg-secondary py-4 px-2 rounded-md relative shadow-lg space-y-2 md:px-4">
             <h4 className="text-lg font-bold">Tailwind CSS Code</h4>
             <div className="relative">
                 <Input className="bg-background h-12 pr-10" readOnly value={code}/>

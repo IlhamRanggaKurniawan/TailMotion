@@ -27,7 +27,10 @@ const Header = () => {
                     Transform
                 </Link>
                 <Link href="/radius" className={` ${path === "/radius" ? "text-primary" : ""}`}>
-                    Transform
+                    Radius
+                </Link>
+                <Link href="/glassmorphism" className={` ${path === "/glassmorphism" ? "text-primary" : ""}`}>
+                    Glassmorphism
                 </Link>
             </nav>
             <div className='flex h-full items-center gap-3'>

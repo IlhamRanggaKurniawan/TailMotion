@@ -36,9 +36,9 @@ body {
   }
 
   .dark {
-    --background: 240 5% 10%; /* Lebih terang dari hitam pekat */
-    --foreground: 0 0% 90%; /* Teks sedikit lebih gelap */
-    --card: 240 5% 12%; /* Latar belakang kartu tidak terlalu pekat */
+    --background: 240 5% 10%;
+    --foreground: 0 0% 90%;
+    --card: 240 5% 12%;
     --card-foreground: 0 0% 90%;
     --popover: 240 5% 12%;
     --popover-foreground: 0 0% 90%;
