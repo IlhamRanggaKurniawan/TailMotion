@@ -7,12 +7,14 @@ import { RotateCcw } from 'lucide-react'
 import { Switch } from '../ui/switch'
 
 const MotionControl = () => {
+    const [duration, setDuration] = useState(0.2)
     const [initialScale, setInitialScale] = useState(0)
     const [scale, setScale] = useState(1)
     const [delay, setDelay] = useState(1)
     const [rotate, setRotate] = useState(0)
     const [initialRotate, setInitialRotate] = useState(0)
     const [borderRadius, setBorderRadius] = useState(0)
+    const [initialBorderRadius, setInitialBorderRadius] = useState(0)
     const [drag, setDrag] = useState(false)
     const [repeat, setRepeat] = useState(false)
     const [motionKey, setMotionKey] = useState(Date.now())
@@ -24,15 +26,18 @@ const MotionControl = () => {
                 <motion.div
                     key={motionKey}
                     className='bg-primary w-36 h-36 z-10 md:w-48 md:h-48 lg:w-56 lg:h-56'
+                    style={{ transitionDuration: `${duration}s`, transitionProperty: "all" }}
                     initial={{
                         scale: initialScale,
                         rotate: initialRotate,
+                        borderRadius: initialBorderRadius
                     }}
                     animate={{
                         scale,
                         rotate,
                         borderRadius,
                         transition: {
+                            duration,
                             repeatDelay: delay,
                             repeat: repeat ? Infinity : 0,
                             type: "spring",
@@ -47,6 +52,7 @@ const MotionControl = () => {
             <div className='space-y-12 w-full'>
                 <div className='bg-secondary shadow-xl rounded-md w-full p-4 space-y-2'>
                     <h2 className='text-lg font-bold'>Animate Properties</h2>
+                    <SliderInput name='Transition Duration' setValue={setDuration} value={duration} unit='sec' max={5} min={0.2} step={0.01} />
                     <SliderInput name='Scale' setValue={setScale} value={scale} unit='' max={2} min={1} step={0.01} />
                     <SliderInput name='Delay' setValue={setDelay} value={delay} unit='sec' max={5} min={1} step={0.01} />
                     <SliderInput name='Rotate' setValue={setRotate} value={rotate} unit='deg' max={360} min={-360} step={1} />
@@ -64,6 +70,7 @@ const MotionControl = () => {
                     <h2 className='text-lg font-bold'>Initial Properties</h2>
                     <SliderInput name='Initial Scale' setValue={setInitialScale} value={initialScale} unit='' max={5} min={0} step={0.01} />
                     <SliderInput name='Initial Rotate' setValue={setInitialRotate} value={initialRotate} unit='deg' max={360} min={-360} step={1} />
+                    <SliderInput name='Border Radius' setValue={setInitialBorderRadius} value={initialBorderRadius} unit='px' max={500} min={0} step={1} />
 
                     <div className='w-full flex justify-end'>
                         <button onClick={() => setMotionKey(Date.now())}>
