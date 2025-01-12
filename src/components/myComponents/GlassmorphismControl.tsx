@@ -24,13 +24,14 @@ const GlassmorphismControl = () => {
         return `rgba(${r}, ${g}, ${b}, ${opacity})`
     }
 
+    const tailwindCode = `bg-[${color}]/[${opacity}] backdrop-blur-[${blur}px] saturate-[${saturation}] contrast-[${contrast}]`
+
     return (
         <div className='flex flex-col justify-between h-full gap-12 px-4 overflow-hidden mb-16 md:flex-row md:overflow-visible'>
             <GlassmorphismPreview
                 style={{
                     backdropFilter: `blur(${blur}px) saturate(${saturation}) contrast(${contrast})`,
                     backgroundColor: getRgbaColor(),
-                    opacity: opacity,
                 }}
             />
             <div className='space-y-12 w-full'>
@@ -48,7 +49,7 @@ const GlassmorphismControl = () => {
                         </div>
                     </div>
                 </div>
-                <TailwindSnippet code={""} />
+                <TailwindSnippet code={tailwindCode} />
             </div>
         </div>
     )

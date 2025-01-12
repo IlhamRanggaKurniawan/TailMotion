@@ -32,6 +32,9 @@ const Header = () => {
                 <Link href="/glassmorphism" className={` ${path === "/glassmorphism" ? "text-primary" : ""}`}>
                     Glassmorphism
                 </Link>
+                <Link href="/shadow" className={` ${path === "/shadow" ? "text-primary" : ""}`}>
+                    Shadow
+                </Link>
             </nav>
             <div className='flex h-full items-center gap-3'>
                 <Link href="https://github.com/IlhamRanggaKurniawan" target='_blank'>
