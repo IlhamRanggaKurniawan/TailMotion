@@ -35,6 +35,9 @@ const Header = () => {
                 <Link href="/shadow" className={` ${path === "/shadow" ? "text-primary" : ""}`}>
                     Shadow
                 </Link>
+                <Link href="/motion" className={` ${path === "/motion" ? "text-primary" : ""}`}>
+                    Motion
+                </Link>
             </nav>
             <div className='flex h-full items-center gap-3'>
                 <Link href="https://github.com/IlhamRanggaKurniawan" target='_blank'>
